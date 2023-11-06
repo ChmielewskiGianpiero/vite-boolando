@@ -1,4 +1,5 @@
 <script>
+
 export default {
     data () {
         return {
@@ -7,48 +8,66 @@ export default {
     }
 }
 
-
 </script>
 
 <template>
     <header class="header-page position-fixed">
         <nav class="container">
             <div class="row justify-between">
-                <div class="col">
-                    <a href="#">Donna</a>
-                    <a href="#">Uomo</a>
-                    <a href="#">Bambini</a>
-                </div>
-                <img class="col logo" src="../assets/boolean-logo.png" alt="">
-                <div class="col ">
-                    <a href="#">
-                        <img class="icon-size" src="../assets/profile.png" alt="">
-                    </a>
-                    <a href="#">
-                        <img class="icon-size" src="../assets/wishlist-1-32.png" alt="">
-                    </a>
-                    <a href="#">
-                        <img class="icon-size" src="../assets/shopping-cart.png" alt="">
-                    </a>
-                </div>
+                <ul class="row header-list">
+                    <li>
+                        <a href="#">Donna</a>
+                    </li>
+                    <li>
+                        <a href="#">Uomo</a>
+                    </li>
+                    <li>
+                        <a href="#">Bambini</a>
+                    </li>
+                </ul>
+                <img class="page-logo" src="../assets/boolean-logo.png" alt="">
+                <ul class="row header-list">
+                    <li>
+                        <a href="#">
+                            <img class="icon-size" src="../assets/profile.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img class="icon-size" src="../assets/wishlist-1-32.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img class="icon-size" src="../assets/shopping-cart.png" alt="">
+                        </a>
+                    </li>
+                </ul>
             </div>
         </nav>
     </header>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+@use '../src/styles/partials/variables' as *;
+@use '../src/styles/partials/mixins' as *;
+
 .container {
     max-width: 800px;
     margin: 0 auto;
 }
 
+.header-list{
+    gap: 20px;
+
+    a {
+        color: $main-text-color;
+    }
+}
+
 .row {
     display: flex;
     flex-wrap: wrap;
-}
-
-.col {
-    color: white;
 }
 
 .position-fixed{
@@ -63,16 +82,11 @@ export default {
 }
 
 .header-page{
-    background-color: #FF6900;
+    background-color: $main_color;
     padding: 15px;
-
-    a {
-
-    }
 }
 
-.logo{
-    max-width: 100%;
+.page-logo{
     height: 25px;
 }
 
