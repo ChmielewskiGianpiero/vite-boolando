@@ -2,6 +2,7 @@
 import PageHeader from './components/PageHeader.vue';
 import PageMain from './components/PageMain.vue';
 import PageFooter from './components/PageFooter.vue';
+import cardJson from '../db.json'
 
 export default  {
   components: {
@@ -9,8 +10,10 @@ export default  {
   },
     data (){
       return {
-        
+        card: cardJson
       }
+    },
+    created (){
     }
   }
 </script>

@@ -3,7 +3,7 @@
 export default {
     data () {
         return {
-
+            category: ['Donna', 'Uomo', 'Bambini']
         }
     }
 }
@@ -15,14 +15,8 @@ export default {
         <nav class="container">
             <div class="row justify-between">
                 <ul class="row header-list">
-                    <li>
-                        <a href="#">Donna</a>
-                    </li>
-                    <li>
-                        <a href="#">Uomo</a>
-                    </li>
-                    <li>
-                        <a href="#">Bambini</a>
+                    <li v-for="(n, i) in 3" :key="i">
+                        <a href="#"> {{  category[i]  }} </a>
                     </li>
                 </ul>
                 <img class="page-logo" src="../assets/boolean-logo.png" alt="">
