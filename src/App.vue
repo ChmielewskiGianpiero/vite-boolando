@@ -3,6 +3,7 @@ import PageHeader from './components/PageHeader.vue';
 import PageMain from './components/PageMain.vue';
 import PageFooter from './components/PageFooter.vue';
 import cardJson from '../db.json'
+import axios from 'axios'
 
 export default  {
   components: {
@@ -14,6 +15,7 @@ export default  {
       }
     },
     created (){
+      
     }
   }
 </script>

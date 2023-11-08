@@ -1,6 +1,7 @@
 <script>
 import Product from './Product.vue';
-import cardJson from '/GitHubRepo/Projects/vite-boolando/db.json';
+import { store } from '../store'
+import axios from 'axios'
 
 
 export default {
@@ -9,11 +10,16 @@ export default {
     },
     data () {
         return {
-            cards: cardJson.products
+            cards: store.products
         }
     },
     created(){
-        console.log(this.card)
+        axios.get('http://localhost:3000/products')
+      .then(res =>{
+        const cards = res.data
+        console.log(cards)
+        this.store.products = cards
+      })
     }
 }
 
@@ -29,7 +35,8 @@ export default {
                     :nameItem="card.name" 
                     :src1="card.frontImage" 
                     :src1b="card.backImage"
-                    :price="card.price" />
+                    :price="card.price"
+                    :greenTag="card.badges.value" />
                 </div>
             </div>
         </div>

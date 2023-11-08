@@ -5,7 +5,8 @@ export default {
         src1b: String,
         brand: String,
         nameItem: String,
-        price: String
+        price: String,
+        greenTag: String,
     }
 }
 
@@ -18,8 +19,6 @@ export default {
         <img :src="src1" alt="">
             <img class="overlay" :src="src1b" alt="">
         <span class="heart-icon">&hearts;</span>
-        <!-- <span class="red-tag"> </span>
-        <span class="green-tag"></span> -->
     </figure>
 
     <div class="container-info-card">
