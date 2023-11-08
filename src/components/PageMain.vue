@@ -10,7 +10,8 @@ export default {
     },
     data () {
         return {
-            cards: store.products
+            cards: store.products,
+            store: store
         }
     },
     created(){
