@@ -7,24 +7,27 @@ export default {
         nameItem: String,
         price: String,
         greenTag: String,
+        redTag: String,
     }
 }
 
 </script>
 
 <template>
-<div class="card">
+<div class="card" >
 
-    <figure class="card-image">
+    <figure class="card-image" @click="$emit('show', this.nameItem)" >
         <img :src="src1" alt="">
             <img class="overlay" :src="src1b" alt="">
         <span class="heart-icon">&hearts;</span>
+        <span class="red-tag"> {{ redTag }}</span>
+        <span class="green-tag"> {{ greenTag }}</span>
     </figure>
 
     <div class="container-info-card">
         <div class="brand"> {{ brand }} </div>
         <a href="#">
-            <div class="name-item"> {{ nameItem }} </div>
+            <div class="name-item" @click="$emit('show')"> {{ nameItem }} </div>
         </a>
         <div>
             <span class="price"> {{ price }}</span>
